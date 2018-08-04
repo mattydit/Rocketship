@@ -39,6 +39,7 @@ public class Ship : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            //Boundary left
             if (xPos <= -3)
             {
                 xPos = -3;
@@ -51,6 +52,7 @@ public class Ship : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            //Boundary right
             if (xPos >= 3)
             {
                 xPos = 3;
@@ -60,7 +62,8 @@ public class Ship : MonoBehaviour
                 xPos += 3;
             }
         }
-
+        
+        //Move the ship
         rb.AddForce(transform.forward * drift * Time.deltaTime, ForceMode.Acceleration);
 	}
 
