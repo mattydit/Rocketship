@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
+    private bool isDead = false;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
 
@@ -32,40 +33,44 @@ public class Ship : MonoBehaviour
         pos.x = Mathf.MoveTowards(pos.x, xPos, drift * Time.deltaTime);
         rb.position = pos;
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (isDead == false)
         {
-            Fire();
-        }
-        
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            //Boundary left
-            if (xPos <= -3)
+            if (Input.GetKeyDown(KeyCode.X))
             {
-                xPos = -3;
+                Fire();
             }
-            else
-            {
-                xPos -= 3;
-            }
-        }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            //Boundary right
-            if (xPos >= 3)
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                xPos = 3;
+                //Boundary left
+                if (xPos <= -3)
+                {
+                    xPos = -3;
+                }
+                else
+                {
+                    xPos -= 3;
+                }
             }
-            else
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                xPos += 3;
+                //Boundary right
+                if (xPos >= 3)
+                {
+                    xPos = 3;
+                }
+                else
+                {
+                    xPos += 3;
+                }
             }
+
+            //Move the ship
+            rb.AddForce(transform.forward * drift * Time.deltaTime, ForceMode.Acceleration);
         }
-        
-        //Move the ship
-        rb.AddForce(transform.forward * drift * Time.deltaTime, ForceMode.Acceleration);
-	}
+    }
+       
 
     void Fire()
     {
@@ -82,5 +87,12 @@ public class Ship : MonoBehaviour
 
         //Destroy the bullet after 2 seconds
         Destroy(bullet, 1.55f);
+    }
+
+    void OnCollisionEnter()
+    {
+        isDead = true;
+        GameControl.instance.PlayerDied();
+
     }
 }

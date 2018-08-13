@@ -9,7 +9,7 @@ public class GameControl : MonoBehaviour
 
     private int score = 0;
     public bool game_over = false;
-    public float scrollspeed = -2f;
+    public float scrollspeed = -4f;
 
     void Awake()
     {
