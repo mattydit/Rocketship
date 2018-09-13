@@ -86,7 +86,7 @@ public class Ship : MonoBehaviour
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
 
         //Destroy the bullet after 2 seconds
-        Destroy(bullet, 1.55f);
+        //Destroy(bullet, 1.55f);
     }
 
     void OnCollisionEnter()

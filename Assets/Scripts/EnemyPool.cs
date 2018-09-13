@@ -10,6 +10,8 @@ public class EnemyPool : MonoBehaviour
     private Vector3 objectPoolPos = new Vector3(0, 0.6f, -11.5f);
     private float timeSinceLast;
     public float spawnRate = 4f;
+    private int[] lanes = { -3, 0, 3 };
+    private int current;
     
 
 	// Use this for initialization
