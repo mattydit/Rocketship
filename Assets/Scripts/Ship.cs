@@ -11,6 +11,7 @@ public class Ship : MonoBehaviour
     private Rigidbody rb;
     private float xPos;
     private float drift = 20;
+    private int ammo = 5;
     
 
 	// Use this for initialization
