@@ -10,7 +10,7 @@ public class ScrollingObject : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
+        //rb.freezeRotation = true;
         //Start moving the object
         rb.velocity = new Vector3(0, 0, GameControl.instance.scrollspeed);
     }

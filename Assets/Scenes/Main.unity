@@ -237,8 +237,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 342264486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.99, z: -17.9}
-  m_LocalScale: {x: 10, y: 1.5, z: 16}
+  m_LocalPosition: {x: 0, y: 0.99, z: -16.2}
+  m_LocalScale: {x: 10, y: 1.5, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   game_over: 0
-  scrollspeed: -2
+  scrollspeed: -6
 --- !u!4 &509437366
 Transform:
   m_ObjectHideFlags: 0
@@ -364,8 +364,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPoolSize: 5
-  enemyPrefab: {fileID: 0}
-  spawnRate: 4
+  hazard: {fileID: 1211734356240952, guid: 581d28f76cd9a794abe2b26038c7baf4, type: 2}
+  spawnRate: 1
+  startWait: 0
+  waveWait: 0
 --- !u!1 &614916231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: ad7df0110200ed240a3d1db8010ff1d5,
@@ -475,7 +477,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4374885542837944, guid: 581d28f76cd9a794abe2b26038c7baf4, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -17.91
+      value: -11.12
       objectReference: {fileID: 0}
     - target: {fileID: 4374885542837944, guid: 581d28f76cd9a794abe2b26038c7baf4, type: 2}
       propertyPath: m_LocalRotation.x
@@ -507,6 +509,10 @@ Prefab:
       propertyPath: explosion
       value: 
       objectReference: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 2}
+    - target: {fileID: 1211734356240952, guid: 581d28f76cd9a794abe2b26038c7baf4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 581d28f76cd9a794abe2b26038c7baf4, type: 2}
   m_IsPrefabAsset: 0
