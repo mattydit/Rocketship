@@ -8,6 +8,7 @@ public class EnemyPool : MonoBehaviour
 {
     public int enemyPoolSize;
     public GameObject hazard;
+    public GameObject hazard2;
     private Vector3 objectPoolPos = new Vector3(0, 0.6f, -11.5f);
     private float timeSinceLast;
     public float spawnRate;
@@ -16,11 +17,15 @@ public class EnemyPool : MonoBehaviour
     int randomIndex;
     public float startWait;
     public float waveWait;
+
+    List<GameObject> prefabList = new List<GameObject>();
     
 
 	// Use this for initialization
 	void Start ()
     {
+        prefabList.Add(hazard);
+        prefabList.Add(hazard2);
         StartCoroutine(SpawnObstacle());
 	}
 	
@@ -36,6 +41,8 @@ public class EnemyPool : MonoBehaviour
         {
             for(int i = 0; i <enemyPoolSize; i++)
             {
+                int prefabIndex = UnityEngine.Random.Range(0, 2);
+
                 System.Random r = new System.Random();
                 //Create random index value
                 randomIndex = r.Next(0, lanes.Length);
@@ -43,7 +50,7 @@ public class EnemyPool : MonoBehaviour
                 int randomLane = lanes[randomIndex];
                 Vector3 spawnPos = new Vector3(randomLane, 0.9f, -9f);
                 Quaternion spawnRotation = Quaternion.identity;
-                Instantiate(hazard, spawnPos, spawnRotation);
+                Instantiate(prefabList[prefabIndex], spawnPos, spawnRotation);
                 yield return new WaitForSeconds(spawnRate);
             }
 
