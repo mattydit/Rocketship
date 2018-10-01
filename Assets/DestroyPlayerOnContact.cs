@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyByContact : MonoBehaviour
+public class DestroyPlayerOnContact : MonoBehaviour
 {
     public GameObject explosion;
 
@@ -13,10 +13,12 @@ public class DestroyByContact : MonoBehaviour
             return;
         }
 
+        //Explosion
         Instantiate(explosion, transform.position, transform.rotation);
         Destroy(other.gameObject);
         Destroy(gameObject);
 
-
+        //End game
+        GameControl.instance.PlayerDied();
     }
 }

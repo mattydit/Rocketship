@@ -6,11 +6,11 @@ using Random = UnityEngine.Random;
 
 public class EnemyPool : MonoBehaviour
 {
-    public int enemyPoolSize = 5;
+    public int enemyPoolSize;
     public GameObject hazard;
     private Vector3 objectPoolPos = new Vector3(0, 0.6f, -11.5f);
     private float timeSinceLast;
-    public float spawnRate = 2f;
+    public float spawnRate;
     private int[] lanes = { -3, 0, 3 };
     private int current;
     int randomIndex;

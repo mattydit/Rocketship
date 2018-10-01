@@ -363,9 +363,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea572a474709e049b718e8d6c814ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPoolSize: 5
+  enemyPoolSize: 10
   hazard: {fileID: 1211734356240952, guid: 581d28f76cd9a794abe2b26038c7baf4, type: 2}
-  spawnRate: 1
+  spawnRate: 0.5
   startWait: 0
   waveWait: 0
 --- !u!1 &614916231 stripped
@@ -394,7 +394,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 614916231}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 22, y: 24, z: 8}
@@ -414,6 +414,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &614916237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 614916231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92ea1f36f9c9d248b361abb1f11a3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 100008, guid: a93496017806b7740910df5fd946f306, type: 2}
 --- !u!1001 &698409789
 Prefab:
   m_ObjectHideFlags: 0
