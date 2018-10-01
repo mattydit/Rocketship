@@ -11,7 +11,7 @@ public class Ship : MonoBehaviour
     private Rigidbody rb;
     private float xPos;
     private float drift = 20;
-    private int ammo = 5;
+    private int ammo = 3;
     
 
 	// Use this for initialization
@@ -75,7 +75,7 @@ public class Ship : MonoBehaviour
 
     void Fire()
     {
-        
+        ammo--;
 
         //Create the bullet
         var bullet = (GameObject)Instantiate(
@@ -87,7 +87,18 @@ public class Ship : MonoBehaviour
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * 6;
 
         //Destroy the bullet after 2 seconds
-        //Destroy(bullet, 1.55f);
+        Destroy(bullet, 2f);
+
+        if (ammo <= 0)
+        {
+            Reload();
+        }
+
+    }
+
+    void Reload()
+    {
+
     }
 
     void OnCollisionEnter()
