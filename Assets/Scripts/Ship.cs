@@ -38,7 +38,15 @@ public class Ship : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                Fire();
+                if (pos.x == -3 || pos.x == 0 || pos.x == 3)
+                {
+                    fire();
+                }
+                else
+                {
+
+                }
+                
             }
 
             if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -73,7 +81,7 @@ public class Ship : MonoBehaviour
     }
        
 
-    void Fire()
+    void fire()
     {
         ammo--;
 
